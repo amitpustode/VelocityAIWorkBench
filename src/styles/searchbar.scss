@@ -1,0 +1,28 @@
+@use './variables';
+
+.search-bar {
+    position: relative;
+    border-bottom: 2px solid variables.$light-primary-color;
+    padding: 13px 20px;
+    display: flex;
+
+    .search-box{
+        height: 25px;
+
+        .search-icon{
+            position: relative;
+            top: 2px;
+            right: 2px;
+        }
+        input{
+            width: 100%;
+            font-size: 1em;
+            border: 0px;
+            background-color: transparent;
+        }
+        input:focus{
+            outline: none;
+        }
+    }
+}
+  

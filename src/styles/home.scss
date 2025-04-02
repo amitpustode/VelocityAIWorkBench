@@ -1,0 +1,102 @@
+@use './variables';
+@use './common.scss';
+
+/* Mixin for background video */
+@mixin background-video-styles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    transform: scaleX(-1);
+}
+
+/* Mixin for main-wrap */
+@mixin main-wrap-styles {
+    background-color: #ffffff;
+    background-image: url('../assets/images/arimg.png');
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Mixin for box-wrap headings */
+@mixin box-wrap-headings {
+    h3 {
+        color: variables.$primary-color;
+    }
+
+    h4 {
+        font-weight: 600 !important;
+    }
+}
+
+/* Global styles */
+.background-video {
+    @include background-video-styles;
+}
+
+.box-wrap {
+    @include box-wrap-headings;
+}
+
+.getstarted-btn {
+    margin-top: 20px !important;
+}
+
+.main-wrap {
+    @include main-wrap-styles;
+}
+
+.home-wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+/* Mobile (<= 1100px) */
+@media screen and (max-width: 1281px) {
+    .main-wrap {
+        padding: 0;
+    }
+
+    .home-wrap {
+        padding: 60px 90px 30px;
+        gap: 30px;
+        width: 670px;
+    }
+
+    .home-box {
+        width: 260px;
+    }
+
+    .home-content {
+        font-size: 13px !important;
+    }
+
+    .box-wrap {
+        padding-left: 60px;
+        width: 830px;
+    }
+}
+
+/* Desktop (1101px - 1920px) */
+@media screen and (min-width: 1282px) and (max-width: 1920px) {
+
+    .home-wrap {
+        padding: 70px 100px;
+        gap: 40px;
+        max-width: 830px;
+    }
+
+    .home-box {
+        width: 300px;
+    }
+
+    .box-wrap {
+        padding: 0 100px;
+    }
+}

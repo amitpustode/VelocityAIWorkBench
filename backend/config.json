@@ -1,0 +1,21 @@
+{
+  "provider": "",
+  "embedprovider": "",
+  "configJson": {
+    "azureOpenAI": {
+      "provider": null,
+      "model": "",
+      "endpoint": "",
+      "apiKey": ""
+    }
+  },
+  "embedconfigJson": {
+    "azureOpenAI": {
+      "embedprovider": null,
+      "model": "",
+      "endpoint": "",
+      "apiKey": ""
+    }
+  },
+  "lookupChecked": false
+}

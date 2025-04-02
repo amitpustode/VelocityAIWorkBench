@@ -1,0 +1,81 @@
+@use './_variables.scss';
+
+.header-menu {
+    .menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+
+      .isactive{
+        background-color: #fffbfa!important;
+        position: relative;
+        overflow: visible;
+        
+        .icon{
+            filter: brightness(0) saturate(100%) invert(48%) sepia(73%) saturate(5618%) hue-rotate(338deg) brightness(103%) contrast(101%);
+        }
+      }
+  
+      .menu-item {
+        position: relative;
+        margin: 0;
+        padding: 10px 20px;
+        color: #000;
+        cursor: pointer;
+        border-radius: 0px;
+
+        .menu-link {
+          text-decoration: none;
+          color: #000;
+        }
+  
+        &:hover {
+          background-color: variables.$menu-hover-color!important;
+
+          .menu-link{
+            color: variables.$primary-color!important;
+          }
+
+        }
+
+        .submenu {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          background-color: variables.$menu-hover-color;
+          display: flex;
+          flex-direction: column;
+          box-shadow: variables.$shadow-elevation-low!important;
+          min-width: 300px;
+          
+          .submenu-item {
+            padding: 10px 20px;
+            color: #000;
+            cursor: pointer;
+            border-bottom: 2px solid variables.$light-primary-color;
+
+            .issubactive{
+              background-color: variables.$primary-color!important;
+              color: variables.$primary-color!important;
+              position: relative;
+              overflow: visible;
+              
+              .icon{
+                  filter: brightness(0) saturate(100%) invert(48%) sepia(73%) saturate(5618%) hue-rotate(338deg) brightness(103%) contrast(101%);
+              }
+            }
+  
+            &:hover {
+              background-color: rgba(0,0,0,0.05);
+              color: variables.$primary-color!important;
+            }
+          }
+        }
+      }
+    }
+  }
+  

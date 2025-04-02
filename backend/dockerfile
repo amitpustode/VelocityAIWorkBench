@@ -1,0 +1,31 @@
+FROM python:3.12.8-slim
+
+# 1. Create user
+RUN groupadd --gid 1001 appuser && \
+    useradd --uid 1001 --gid appuser --shell /bin/bash --create-home appuser
+
+# 2. Working directory
+WORKDIR /home/appuser
+
+# 3. Copy source
+COPY . /home/appuser
+
+# 4. Ownership and permissions
+RUN chown -R appuser:appuser /home/appuser && \
+    chmod -R 755 /home/appuser && \
+    chmod 664 /home/appuser/config.json
+
+# 5. Non-root user
+USER appuser
+
+# 6. Install requirements
+RUN pip install --no-cache-dir -r requirements.txt
+
+# 7. Compile
+RUN python -m compileall -b . || true
+
+# 8. Remove only non-entry .py files
+RUN find . -name "*.py" ! -name "main.py" -exec rm -f {} \; || true
+
+# 9. Start server
+CMD ["python", "main.py"]

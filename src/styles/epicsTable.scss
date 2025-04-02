@@ -1,0 +1,10 @@
+@use './common.scss';
+@use './variables';
+
+.tableCheckbox{
+    color: variables.$secondary-color!important;
+        
+    .Mui-checked {
+        color: variables.$primary-color!important;
+    }
+}
