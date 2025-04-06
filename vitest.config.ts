@@ -5,5 +5,10 @@ export default defineConfig({
     root: __dirname,
     include: ['test/**/*.{test,spec}.?(c|m)[jt]s?(x)'],
     testTimeout: 1000 * 29,
+    coverage: {
+      provider: 'v8', // or 'c8'
+      reporter: ['text', 'lcov'], // lcov is required for SonarQube
+      reportsDirectory: './coverage',
+    },
   },
 })
