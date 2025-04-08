@@ -37,7 +37,8 @@ def trivy_scan(repo_path):
         return
 
     repo_name = os.path.basename(os.path.abspath(repo_path.rstrip('/')))
-    output_file = f"{repo_name}-trivy.json"
+    #output_file = f"{repo_name}-trivy.json"
+    output_file = f"/workspace/{repo_name}-trivy.json"
 
     try:
         cmd = f"trivy fs {repo_path} --format json --output {output_file}"
