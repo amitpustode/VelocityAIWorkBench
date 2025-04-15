@@ -97,7 +97,7 @@ def zip_scan_results(repo_path):
     zip_filename = f"{repo_name}-scan-results-{timestamp}.zip"
 
     result_files = [
-        f"{repo_name}-trivy.json",
+        f"{repo_name}-trivy.txt",
         f"{repo_name}-semgrep.json",
         f"{repo_name}-semgrep.csv",
         f"{repo_name}-detect-secrets-result.txt"
